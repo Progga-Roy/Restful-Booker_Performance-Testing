@@ -65,17 +65,6 @@ Is a non-functional testing approach to ensure that the application and the isol
 ## What is JMeter?
 JMeter is an open-source Java-based tool primarily used for performance testing web applications. 
 
-# Content
-
-- [Load testing Report](https://github.com/Mahmuduls1995/Performance-Testing-With-JMeter-BookingApp/tree/main?tab=readme-ov-file#load-testing-report) | [Running The Test](https://github.com/Mahmuduls1995/Performance-Testing-With-JMeter-BookingApp/blob/main/README.md#running-the-test)
-- [Summary](https://github.com/Mahmuduls1995/Performance-Testing-With-JMeter-BookingApp/tree/main?tab=readme-ov-file#summary) | [Collection of API](https://github.com/Mahmuduls1995/Performance-Testing-With-JMeter-BookingApp?tab=readme-ov-file#collection-of-api)
-- [Introduction](https://github.com/Mahmuduls1995/Performance-Testing-With-JMeter-BookingApp/tree/main?tab=readme-ov-file#introduction) | [Read Test Data from CSV file in Jmeter](https://github.com/Mahmuduls1995/Performance-Testing-With-JMeter-BookingApp?tab=readme-ov-file#read-test-data-from-csv-file-in-jmeter)
-- [Install](https://github.com/Mahmuduls1995/Performance-Testing-With-JMeter-BookingApp/tree/main?tab=readme-ov-file#install)  | [Test execution from GUI](https://github.com/Mahmuduls1995/Performance-Testing-With-JMeter-BookingApp?tab=readme-ov-file#test-execution-from-gui)
-- [Prerequisites](https://github.com/Mahmuduls1995/Performance-Testing-With-JMeter-BookingApp/tree/main?tab=readme-ov-file#prerequisites) | [Test execution from the Terminal](https://github.com/Mahmuduls1995/Performance-Testing-With-JMeter-BookingApp?tab=readme-ov-file#test-execution-from-the-terminal)
-- [Elements of a Minimal Test Plan](https://github.com/Mahmuduls1995/Performance-Testing-With-JMeter-BookingApp/tree/main?tab=readme-ov-file#prerequisites) | [Make csv File](https://github.com/Mahmuduls1995/Performance-Testing-With-JMeter-BookingApp?tab=readme-ov-file#make-csv-file)
-- [Creating a Test Plan](https://github.com/Mahmuduls1995/Performance-Testing-With-JMeter-BookingApp/blob/main/README.md#creating-a-test-plan) | [Make jtl File](https://github.com/Mahmuduls1995/Performance-Testing-With-JMeter-BookingApp?tab=readme-ov-file#make-jtl-file)
-- [Make html File](https://github.com/Mahmuduls1995/Performance-Testing-With-JMeter-BookingApp?tab=readme-ov-file#make-html-file) | [HTML Report](https://github.com/Mahmuduls1995/Performance-Testing-With-JMeter-BookingApp?tab=readme-ov-file#html-report) | [Transaction Per Second](https://github.com/Mahmuduls1995/Performance-Testing-With-JMeter-BookingApp?tab=readme-ov-file#transaction-per-second)
-
 ## Introduction
 
 This document explains how to run a performance test with JMeter against a Booking Site.
@@ -146,7 +135,7 @@ I have adjusted the thread group to have 1, 100, 500, 1000, 2000 concurrent user
 ![Thread Group](Report/Thread-group.PNG)
 
 - Name: Users
-- Number of Threads (users): 1, 100, 500, 1000, 2000
+- Number of Threads (users): 1, 100, 500, 550.
 - Ramp-Up Period (in seconds): 10
 - Loop Count: 1  
 
@@ -163,95 +152,47 @@ I have adjusted the thread group to have 1, 100, 500, 1000, 2000 concurrent user
 
     Summary and Aggregate  Report for  **Number of Threads 550; Ramp-Up Period 10s**
    
-    Summary  Report           |  Aggregate  Report
+    Aggregate  Report           |  Summary  Report
     :-------------------------:|:-------------------------:
-    ![Aggregate Report](Report/AggregateReport.PNG)  | ![Summary Report](Report/Summary.PNG)
+    ![Aggregate Report](Report/Aggregate.PNG)  | ![Summary Report](Report/Summary.PNG)
 
 ## Test execution from the Terminal
  
 - JMeter should be initialized in non-GUI mode.
 - Make a report folder in the **bin** folder.  
-- Run Command in __jmeter\bin__ folder. 
-
- ### Make csv file    
+- Run Command in __jmeter\bin__ folder.    
  
    - **n**: non GUI mode
   - **t**: test plan to execute
   - **l**: output file with results   
 
-```bash
-  jmeter -n -t  BookingApp_csv_dataset_t1.jmx -l   report\BookingApp_csv_dataset_t1.csv
-```   
-
-![BookingApp_t1_csv](https://github.com/Mahmuduls1995/Performance-Testing-With-JMeter-BookingApp/blob/main/CSV%20DataFile/BookingApp_csv_dataset_t1_CSV%20-Result.png)
-
 
 ## Make jtl file
 
 ```bash
-  jmeter -n -t  BookingApp_csv_dataset_t1.jmx -l BookingAppLoadTesting\report\BookingApp_csv_dataset_t1.jtl
-```      
-  Then continue to upgrade Threads( 1, 100, 500, 1000, 2000 ) by keeping Ramp-up-Period Same.   
-   
-![BookingApp_t1_jtl](https://github.com/Mahmuduls1995/Performance-Testing-With-JMeter-BookingApp/blob/main/jtl-html-command-Ss/Jtl%20file%20Commant%20-SS.png)
-  
- 
-![BookingApp_allJTLs](https://github.com/Mahmuduls1995/Performance-Testing-With-JMeter-BookingApp/blob/main/jtl-html-command-Ss/All%20Jtl%20file.png)
-
-After completing this command  
+  jmeter -n -t Restful_Booker.jmx -l Report\Restful_Booker.jtl
+```    
 
 ## Make html file   
   
   ```bash
-  jmeter -g BookingAppLoadTesting\report\BookingApp_csv_dataset_t1.jtl -o report\BookingApp_csv_dataset_t1.html
+ jmeter -g Report\Restful_Booker.jtl -o Report\Restful_Booker.html
 ```
 
 - **g**: jtl results file
 
 - **o**: path to output folder
 
-![BookingApp_t1_csv_cmd](https://github.com/Mahmuduls1995/Performance-Testing-With-JMeter-BookingApp/blob/main/jtl-html-command-Ss/jtl%20file%20to%20html%20file%20command.png)
-  
-  
-![BookingApp_reports](https://github.com/Mahmuduls1995/Performance-Testing-With-JMeter-BookingApp/blob/main/jtl-html-command-Ss/Html-Folder-htmlk-link.png)
-
 ## HTML Report
 
-### **Number of Threads 1 ; Ramp-Up Period: 10s**
+### **Number of Threads 550 ; Ramp-Up Period: 10s**
 
-![BookingApp_t1_100pass & Report](https://github.com/Mahmuduls1995/Performance-Testing-With-JMeter-BookingApp/blob/main/jtl-html-command-Ss/t1-html-report.png)
+![R1](Report/R1.PNG)
 
+![R2](Report/R2.PNG)
 
-### **Number of Threads 100 ; Ramp-Up Period 10s**
+### Response Time Overview **Number of Threads 550 ; Ramp-Up Period 10s**
 
-![BookingApp_t1_100pass & Report](https://github.com/Mahmuduls1995/Performance-Testing-With-JMeter-BookingApp/blob/main/jtl-html-command-Ss/t100-html-report.png)
+![R3](Report/R3.PNG)
 
-
-### **Number of Threads 500 ; Ramp-Up Period 10s**
-   
-![BookingApp_t1_100pass & Report](https://github.com/Mahmuduls1995/Performance-Testing-With-JMeter-BookingApp/blob/main/jtl-html-command-Ss/t_500-html-report.png)
-
-
-### **Number of Threads 1000 ; Ramp-Up Period 10s**
-   
-![BookingApp_t1_100pass & Report](https://github.com/Mahmuduls1995/Performance-Testing-With-JMeter-BookingApp/blob/main/jtl-html-command-Ss/t1000-html-report%20(2).png)
-
-
-### **Number of Threads 2000 ; Ramp-Up Period 10s**
-   
-![BookingApp_t1_100pass & Report](https://github.com/Mahmuduls1995/Performance-Testing-With-JMeter-BookingApp/blob/main/jtl-html-command-Ss/t2000-html-report.png)
-
-## Transaction Per Second
-
-### Transaction Per Second **Number of Threads 2000 ; Ramp-Up Period 10s**
-   
-![BookingApp_t2000_tps](https://github.com/Mahmuduls1995/Performance-Testing-With-JMeter-BookingApp/blob/main/Project%20Screenshot/t200_total_transaction-per-second.png)
-
-### Response Time Percentiles **Number of Threads 2000 ; Ramp-Up Period 10s**
-   
-![BookingApp_t2000_tps](https://github.com/Mahmuduls1995/Performance-Testing-With-JMeter-BookingApp/blob/main/Project%20Screenshot/t2000-response-time-persentiles.png)
-
-### Response Time Overview **Number of Threads 2000 ; Ramp-Up Period 10s**
-   
-![BookingApp_t2000_tps](https://github.com/Mahmuduls1995/Performance-Testing-With-JMeter-BookingApp/blob/main/Project%20Screenshot/t2000-response-time%20overview.png)
 
