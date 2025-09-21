@@ -165,7 +165,7 @@ I have adjusted the thread group to have 1, 100, 500, 1000, 2000 concurrent user
    
     Summary  Report           |  Aggregate  Report
     :-------------------------:|:-------------------------:
-    ![Aggregate Report](Report/Aggregate.PNG)  | ![Aggregate Report](Report/Aggregate.PNG)
+    ![Aggregate Report](Report/AggregateReport.PNG)  | ![Summary Report](Report/Summary.PNG)
 
 ## Test execution from the Terminal
  
