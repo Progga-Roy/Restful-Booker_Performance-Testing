@@ -1,5 +1,4 @@
-# Restful-Booker_Performance-Testing
-# 🚀 JMeter Performance Testing Project  
+# Jmeter Restful-Booker_Performance-Testing   
 
 ![JMeter](https://img.shields.io/badge/Tool-Apache%20JMeter-red?style=for-the-badge&logo=apache)  
 ![Status](https://img.shields.io/badge/Status-Completed-brightgreen?style=for-the-badge)  
@@ -39,8 +38,6 @@ The following endpoints were tested:
 - **Error %:** `0.24%`  
 - **Pass Rate:** `99.76%`  
 
-![Requests Summary](https://raw.githubusercontent.com/your-username/Performance-Testing-JMeter/main/screenshots/request-summary.png)
-
 ---
 
 ### 📈 Statistics Table  
@@ -79,20 +76,6 @@ JMeter is an open-source Java-based tool primarily used for performance testing 
 - [Creating a Test Plan](https://github.com/Mahmuduls1995/Performance-Testing-With-JMeter-BookingApp/blob/main/README.md#creating-a-test-plan) | [Make jtl File](https://github.com/Mahmuduls1995/Performance-Testing-With-JMeter-BookingApp?tab=readme-ov-file#make-jtl-file)
 - [Make html File](https://github.com/Mahmuduls1995/Performance-Testing-With-JMeter-BookingApp?tab=readme-ov-file#make-html-file) | [HTML Report](https://github.com/Mahmuduls1995/Performance-Testing-With-JMeter-BookingApp?tab=readme-ov-file#html-report) | [Transaction Per Second](https://github.com/Mahmuduls1995/Performance-Testing-With-JMeter-BookingApp?tab=readme-ov-file#transaction-per-second)
 
-## Load testing Report
-
-| Concurrent Request  | Loop Count | Avg TPS for Total Samples  | Error Rate | Total Concurrent API request |
-|               :---: |      :---: |                      :---: |                        :---: |      :---: |
-| 1  | 1  | 1.54| 0%      | 6  |
-| 100  | 1  |  49.18    | 0%      | 600   |
-| 500  | 1  |  183.70   | 0%   | 3000   |
-| 1000  | 1  |  117.23  | 0%   | 6000   |
-| 2000  | 1  |  211.18  | 0%   | 12000  |
-
-## Summary
-
-- Server can handle almost concurrent 2000 API call with almost zero (0) error rate.
-
 ## Introduction
 
 This document explains how to run a performance test with JMeter against a Booking Site.
@@ -127,7 +110,7 @@ Click =>Binaries
 
 The first step in using JMeter is to create a Test Plan. A Test Plan is a collection of elements that define the test scenarios and their configurations. To create a Test Plan, you need to follow these steps:
 
-![c](https://github.com/Mahmuduls1995/Performance-Testing-With-JMeter-BookingApp/blob/main/Project%20Screenshot/Thred%20Group%20create.png)
+![c]()
 
 1. Right-click on the Test Plan in the tree view on the left-hand side of the JMeter interface.
 2. Select Add > Threads (Users) > Thread Group.
