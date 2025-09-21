@@ -110,7 +110,7 @@ Click =>Binaries
 
 The first step in using JMeter is to create a Test Plan. A Test Plan is a collection of elements that define the test scenarios and their configurations. To create a Test Plan, you need to follow these steps:
 
-![c]()
+![Threads](Report/Threads.png)
 
 1. Right-click on the Test Plan in the tree view on the left-hand side of the JMeter interface.
 2. Select Add > Threads (Users) > Thread Group.
@@ -139,11 +139,11 @@ Set up the restful-booker.herokuapp.com/booking key by signing up to the above w
 
 After running the load test, you can view the responses and check the number of requests as well.
 
-![c](https://github.com/Mahmuduls1995/Performance-Testing-With-JMeter-BookingApp/blob/main/Project%20Screenshot/5_.png)
+![Run Overview](Report/Run.PNG)
 
 I have adjusted the thread group to have 1, 100, 500, 1000, 2000 concurrent users and do a load test.
 
-![c](https://github.com/Mahmuduls1995/Performance-Testing-With-JMeter-BookingApp/blob/main/Project%20Screenshot/6_.png)
+![Thread Group](Report/Thread-group.PNG)
 
 - Name: Users
 - Number of Threads (users): 1, 100, 500, 1000, 2000
@@ -157,60 +157,15 @@ I have adjusted the thread group to have 1, 100, 500, 1000, 2000 concurrent user
   3) Each Thread Group specifies how the HTTP Requests should be carried out. To determine how many concurrent "users" will be simulated, one must first know the number of threads. The number of actions each "user" will perform is determined by the loop count.
 
   4) The HTTP Header Manager, which allows you to provide the Request Headers that will be utilized by the upcoming HTTP Requests, is the first item in Thread Groups.
-
-# Collection of API
-
-### List of API 
-
-  - For creating Booking: [https://restful-booker.herokuapp.com/booking](https://restful-booker.herokuapp.com/booking)
-  - For getting, updating, deleting  Booking: [https://restful-booker.herokuapp.com/booking/id](https://restful-booker.herokuapp.com/booking/1)
-
-### Load the JMeter Script 
-
-   - File > Open (CTRL + O)
-   - Locate the "BookingApp_csv_dataset_t1.jmx" file contained on this repo
-   - Continue open BookingApp_csv_dataset_t1 to BookingApp_csv_dataset_t2000
-   - Open those file
-   - The Test Plan will be loaded  
-   
-   ![testPlan](https://github.com/Mahmuduls1995/Performance-Testing-With-JMeter-BookingApp/blob/main/Project%20Screenshot/opening-Jmx-File.png)
-
-## Read Test Data from CSV file in Jmeter    
-
-- Create a CSV file in the test suite folder and add test data to it.
-
-![createCSV](https://github.com/Mahmuduls1995/Performance-Testing-With-JMeter-BookingApp/blob/main/CSV%20DataFile/newuser-CSV-Data.png)
-- Add a Config Element CSV Data Set Config in Jmeter.
-
-![configCSV](https://github.com/Mahmuduls1995/Performance-Testing-With-JMeter-BookingApp/blob/main/CSV%20Data%20Config%20and%20Passed%20Screenshot/CSV%20Data%20Set%20Config.png)
-
-- Configure ' CSV Data Set Config ' based on the need such as providing path of CSV file and variable names and other configs. 
-
-![readCSV](https://github.com/Mahmuduls1995/Performance-Testing-With-JMeter-BookingApp/blob/main/CSV%20Data%20Config%20and%20Passed%20Screenshot/CSV%20File%20to%20Set%20Variable.png)
-
-![readCSV](https://github.com/Mahmuduls1995/Performance-Testing-With-JMeter-BookingApp/blob/main/CSV%20Data%20Config%20and%20Passed%20Screenshot/Newuser-Data%20-Set-From-CSV-File.png)
-
-- Run the test to see if data from the CSV file is read and populated in the results.  <br/>
-
-## Test execution from GUI
- 
-- JMeter should be initialized in GUI mode.
-- Click on Run Button.
-
-![run](https://github.com/Mahmuduls1995/Performance-Testing-With-JMeter-BookingApp/blob/main/Project%20Screenshot/Run%20Button%20SS.png)
+  5) 
 
 - Check Different Types of Report.
 
-    Summary and Aggregate  Report for  **Number of Threads 1 ; Ramp-Up Period 10s**
+    Summary and Aggregate  Report for  **Number of Threads 550; Ramp-Up Period 10s**
    
     Summary  Report           |  Aggregate  Report
     :-------------------------:|:-------------------------:
-    ![BookingApp_t1_summary](https://github.com/Mahmuduls1995/Performance-Testing-With-JMeter-BookingApp/blob/main/Project%20Screenshot/t1-Summary%20report.png)  |  ![BookingApp_t1_agg](https://github.com/Mahmuduls1995/Performance-Testing-With-JMeter-BookingApp/blob/main/Project%20Screenshot/t1-Aggregate-report.png)
-
-    Aggregate  Report for  **Number of Threads 2000 ; Ramp-Up Period 10s**
-    Aggregate  Report
-    :-------------------------:|
-    ![BookingApp_t2000_summary](https://github.com/Mahmuduls1995/Performance-Testing-With-JMeter-BookingApp/blob/main/Project%20Screenshot/t2000_Summary.png)
+    ![Aggregate Report](Report/Aggregate.PNG)  | ![Aggregate Report](Report/Aggregate.PNG)
 
 ## Test execution from the Terminal
  
